@@ -1,0 +1,87 @@
+import java.io.IOException;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Random;
+
+public class Sorteio {
+    public static void main(String[] args) throws IOException {
+        ArrayList<Sorteio> Sorteio = new ArrayList<Sorteio>();
+        Scanner scanner = new Scanner(System.in);
+        int opcao = -1;
+        int num;
+        int num1;
+        char let;
+        do {
+            System.out.println("--------- Sorteio Lotofácil ---------");
+            System.out.println("1. Sorteio de números de 0 até 100");
+            System.out.println("2. Sorteio de letras A até Z");
+            System.out.println("3. Sorteio de números pares/ímpares");
+            System.out.println("0. Sair");
+            System.out.println("-------------------------------------");
+            System.out.print("\nEscolha uma opção: ");
+            opcao = scanner.nextInt();
+            scanner.nextLine();
+            switch (opcao) {
+                case 1:
+                    System.out.println("Aposta de números de 0 até 100 selecionada.");
+                    Scanner numero = new Scanner(System.in);
+                    System.out.print("Digite um número, de 0 a 100.");
+                    num = numero.nextInt();
+                    if(num > 100){
+                        System.out.println("Opção inválida! Digite um número maior que 100." );
+                        } while (num > 100);
+                    else if(num < 0){
+                        System.out.println("Opção inválida! Digite um número menor que 0.");
+                        } while (num < 0);
+                    }
+                    else{
+                        System.out.println("Você escolheu o número: " + num);
+                        }
+                    Random aleatorio1 = new Random();
+                    aleatorio1.nextInt(101);
+                    if(aleatorio1 != num){
+                        System.out.println("Que pena! O número sorteado foi: " + aleatorio1);
+                    }
+                    else{
+                        System.out.println("Parabéns!!! Você ganhou R$ 1.000,00 reais!");
+                    }
+                    break;
+                case 2:
+                    Scanner letra = new Scanner(System.in);
+                    System.out.println("Digite uma letra, de A até Z.");
+                    let = (char) System.in.read();
+                    if(Character.isDigit(let)){
+                        System.out.println("Opção inválida! Digite apenas uma letra!");
+                    } while (Character.isDigit(let));
+                    else {
+                        System.out.println("Você escolheu a letra: " + let);
+                    }
+                    if(let =! let.toUpperCase()){
+                        let.toUpperCase();
+                    }
+                    else{
+
+                    }
+
+
+                    break;
+                case 3:
+                    Scanner numero1 = new Scanner(System.in);
+                    System.out.print("Digite um número inteiro.");
+                    num1 = numero1.nextInt();
+                    if(Character.isLetter(num1)) {
+                        System.out.println("Opção inválida! Digite apenas um número, de valor inteiro.");
+                    } while (Character.isLetter(num1));
+                    else {
+                        System.out.println("Você escolheu o número: " + num1);
+                    }
+                    break;
+                case 0:
+                    System.out.println("Saindo do programa.");
+                    scanner.close();
+                    break;
+                default:
+                    System.out.println("Opção inválida! Digite um número entre 1 e 4.\nE, 0 para encerrar o programa.");
+            } while (opcao != 4);
+        }
+    }
