@@ -1,1 +1,1 @@
-Com certeza uma bagunça, mas é uma revisão para Linguagens de Programação
+Aqui estão as atividades que eu realizei enquanto estudava Linguagens de Programação.
